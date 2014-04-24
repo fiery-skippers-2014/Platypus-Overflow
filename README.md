@@ -3,8 +3,8 @@ Team Platypus
 
 Team members
 ============
-1.Britt
-2.Bo
+1.Britt <br>
+2.Bo <br>
 3.Matt
 4.Namrata
 
