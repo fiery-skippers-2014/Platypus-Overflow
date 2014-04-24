@@ -5,7 +5,7 @@ Team members
 ============
 1.Britt <br>
 2.Bo <br>
-3.Matt
+3.Matt <br>
 4.Namrata
 
 About our App:
