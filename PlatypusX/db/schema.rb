@@ -11,6 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140425003720) do
+ActiveRecord::Schema.define(:version => 20140425005741) do
+
+  create_table "users", :force => true do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_hash"
+    t.string "password_salt"
+  end
 
 end
