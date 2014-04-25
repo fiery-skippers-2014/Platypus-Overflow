@@ -5,13 +5,16 @@ class QuestionsController < ActionController::Base
 
  def new
  	@question = Question.new
- 	@question.save
+ end
+
+ def show
+ 	@question = Question.find(params[:id])
  end
 
  def create
  	@question= Question.new params[:question]
  		if @question.save
- 			redirect_to question_post_path(@question)
+ 			redirect_to root_url
  		else
  			render :new
  		end
