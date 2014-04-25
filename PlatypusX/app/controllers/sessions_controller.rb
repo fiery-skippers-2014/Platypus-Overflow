@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def new
+    render :login
 
   end
 

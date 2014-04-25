@@ -8,7 +8,7 @@ PlatypusX::Application.routes.draw do
   resources :users
   resources :sessions, :except => "sessions#destroy"
 
-  root :to => 'sessions#new'
+  root :to => 'users#index'
 
 
 end
