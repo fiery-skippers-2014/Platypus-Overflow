@@ -1,19 +1,30 @@
-class UsersController < ActionController::Base
+class UsersController < ApplicationController
+  # before_filter :authorize, only: [:edit, :update]
+  def index
+
+  end
 
   def new
     @user = User.new
   end
 
   def create
-    @user = User.new(email: params[:user][:email])
-    @user.password = params[:user][:password]
+    @user = User.new(params[:user])
     if @user.save
-      redirect_to user_path(@user), :notice => "Signed up"
+      session[:user_id] = @user.id
+      redirect_to root_url, :notice => "Signed up"
     else
-      render "new"
+      render :new
     end
   end
 
+  def show
+    if current_user
+      render :show
+    else
+      render :new
+    end
+  end
 
 
 end

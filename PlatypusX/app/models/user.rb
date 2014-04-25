@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :username, :email#, :password_digest, :password_confirmation
   has_secure_password
-  # attr_accessor :password
+  attr_accessible :username, :email, :password, :password_confirmation
+
+  validates_uniqueness_of :email
   # before_save :encrypt_password
 
   # def self.authenticate(email, password)
