@@ -5,7 +5,7 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+gem 'pg', '0.17.0'
 
 
 # Gems used only for assets and not required
@@ -43,6 +43,8 @@ group :development, :test do
 end
 
 group :test do
+  gem 'nokogiri', '1.6.0'
+  gem 'ffi', '1.9.0'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
