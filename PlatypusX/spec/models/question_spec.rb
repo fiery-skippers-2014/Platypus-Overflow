@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Question do 
-	it {should validate presence_of :question}	
+	it { should allow_mass_assignment_of(:title) }
+	it { should allow_mass_assignment_of(:body) }	
+	it { should validate_presence_of(:body) }
+	it { should validate_presence_of(:title) }
 end

@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
 
  def create
  	@question= Question.new params[:question]
- 		if @question.save
+ 		if @question.save!
  			redirect_to root_url
  		else
  			render :new

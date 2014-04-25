@@ -14,8 +14,10 @@ describe QuestionsController do
 	end
 
 	context "#show" do
-		let(:question) {FactoryGirl.create :question}
+		let!(:question) { FactoryGirl.create :question }
+
 		it "should know about a certain question" do
+
 			get :show, :id => question.id 
 			expect(assigns(:question)).to eq question 
 		end
