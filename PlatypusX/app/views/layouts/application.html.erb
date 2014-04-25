@@ -2,26 +2,38 @@
 <html>
 <head>
   <title>PlatypusX</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="jumbotron">
+<h1>Welcome to PlatypusX</h1>
+
+  </div>
+  <div class="main">
   <div id="user_nav">
     <% if current_user %>
     Logged in as <%= current_user.email %>.
-    <%= link_to "Log out", logout_path %>
+    <%= button_to "Log out", logout_path, :method => :get, :class => "btn btn-primary" %>
     <% else %>
-    <%= link_to "Sign up", new_user_path %>or 
-    <%= link_to "log in", login_path %>
+    <%= button_to "Sign up", new_user_path, :method => :get, :class => "btn btn-primary" %>
+    <%= button_to "Log in", login_path, :method => :get, :class => "btn btn-primary" %>
     <% end %>
-  </div>
+    </div>
 
   <% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert alert-danger" %>
   <% end %>
 
 <%= yield %>
 
 </body>
+</div>
 </html>
