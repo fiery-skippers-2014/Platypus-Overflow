@@ -1,7 +1,9 @@
 class CreateQuestion < ActiveRecord::Migration
-  def up
-  end
-
-  def down
-  end
+	def change
+		create_table :questions do |t|
+			t.string :title
+			t.string :body
+			t.timestamps
+		end
+	end
 end
