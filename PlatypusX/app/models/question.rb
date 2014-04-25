@@ -1,4 +1,5 @@
 class Question < ActiveRecord::Base
-  # validates :question, prescence: :true
+  validates :title, presence: true
+  validates :body, presence: true
   attr_accessible :title, :body
 end
