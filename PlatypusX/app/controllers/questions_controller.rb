@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
  def index
  	@questions = Question.all
- end 
+ end
 
  def new
  	@question = Question.new
@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
  def create
  	@question= Question.new params[:question]
  		if @question.save!
- 			redirect_to root_url
+ 			redirect_to questions_path
  		else
  			render :new
  		end
