@@ -2,3 +2,19 @@
 
 <h2><%=@question.title%></h2>
 <h2><%=@question.body%></h2>
+
+  <ul>
+<div class="place_answer">
+  <% @question.answers.each do |x| %>
+  <li><%= x.response %></li>
+  <% end %>
+</div>
+</ul>
+
+
+  <h2>Tell us what you think</h2>
+  <%= form_for [@question, @answer], remote: true, :html => {:class => 'answer'} do |a| %>
+  <h4><%= a.label :Answer %></h4>
+  <h4><%= a.text_area :response %></h4><br>
+  <%= a.submit "Create a Answer" %>
+  <%end%>
