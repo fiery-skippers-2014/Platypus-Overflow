@@ -3,7 +3,7 @@
 		<%= q.label :title %>
 		<%= q.text_field :title %><br><br>
 		<%= q.label :body %>
-		<%= q.text_field :body %><br><br>
+		<%= q.text_field :body %><br><br> <%= render "shared/_vote_form" %>
 		<%= q.submit "Create A Question"%>
 	 <% end %>
 

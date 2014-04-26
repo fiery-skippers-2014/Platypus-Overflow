@@ -1,0 +1,5 @@
+<div>
+  <%= link_to "up vote", votes_path(vote_data: {votable: @question.id, votable_type: "Question", value: +1}) %>
+  <span id="question_<%= @question.id %>"><%= @question.vote_count %></span>
+  <%= link_to "up vote", votes_path(vote_data: {votable: @question.id, votable_type: "Question", value: -1}) %>
+</div>

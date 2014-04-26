@@ -1,6 +1,6 @@
 PlatypusX::Application.routes.draw do
 
-  resources :questions
+  resources :votes
 
 
   # get 'signup', to: 'users#new'
@@ -12,6 +12,8 @@ PlatypusX::Application.routes.draw do
   resources :sessions, :except => "sessions#destroy"
 
   root :to => 'users#index'
+
+
 
 
 end

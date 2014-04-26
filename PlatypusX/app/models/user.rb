@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :name
   validates_presence_of :name, :email
 
+  has_many :votes, as: :votable
+
 end

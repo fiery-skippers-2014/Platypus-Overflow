@@ -3,6 +3,7 @@ class CreateQuestion < ActiveRecord::Migration
 		create_table :questions do |t|
 			t.string :title
 			t.string :body
+      t.integer :vote_count, default: 0
 			t.timestamps
 		end
 	end
