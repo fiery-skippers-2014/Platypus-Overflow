@@ -1,7 +1,8 @@
 PlatypusX::Application.routes.draw do
 
-  resources :questions
-
+  resources :questions do
+    resources :answers
+  end
 
   # get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new', as: 'login'
