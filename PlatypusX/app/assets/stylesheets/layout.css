@@ -1,0 +1,37 @@
+body {
+  background-color: #35d699;
+}
+
+.jumbotron {
+  text-align: center;
+  right: 0;
+  left: 0;
+}
+
+.btn, btn-primary {
+  width: 100px;
+
+}
+
+
+
+form.button_to {
+  width: 100px;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 4px;
+}
+
+.main {
+ width: 960px;
+ margin: 0 auto;
+}
+
+html #user_nav {
+  float: right;
+}
+
+.alert, alert-danger {
+  width: 60%;
+  background-color: ;
+}
