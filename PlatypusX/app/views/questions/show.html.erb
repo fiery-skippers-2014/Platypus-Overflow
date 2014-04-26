@@ -3,7 +3,8 @@
 <h2><%=@question.title%></h2>
 <h2><%=@question.body%></h2>
 
-
+<div class="place_answer">
+</div>
 
   <h2>Tell us what you think</h2>
   <%= form_for [@question, @answer], remote: true, :html => {:class => 'answer'} do |a| %>

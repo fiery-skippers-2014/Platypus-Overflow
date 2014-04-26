@@ -10,7 +10,7 @@ class AnswersController < ApplicationController
 
     @answer = Answer.new(response: response, question_id: question_id)
     if @answer.save
-      render json: @answer, status: :created
+      render :partial => 'answers/answers', :locals => {:answer => @answer}
     else
       render json: @user.errors.full_messages, status: :unprocessable_entity
     end

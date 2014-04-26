@@ -11,7 +11,7 @@ var Answer = {
   },
 
   appendAnswer: function(e, data) {
-
+    $('.place_answer').append(data)
   },
 
   showError: function(e, data) {
