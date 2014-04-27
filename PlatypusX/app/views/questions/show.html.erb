@@ -1,17 +1,18 @@
 <h1>Platypus, where your questions will be answered!!</h1>
 
 <h2><%=@question.title%></h2>
+<%= render '/shared/vote', :vote => @vote %>
 <h2><%=@question.body%></h2>
 
   <ul>
 <div class="place_answer">
   <% @question.answers.each do |x| %>
   <li><%= x.response %></li>
+  <%= render '/shared/vote', :vote => @vote %>
   <% end %>
 </div>
-<%= render '/shared/vote', :vote => @vote %>
-</ul>
 
+</ul>
 
   <h2>Tell us what you think</h2>
   <%= form_for [@question, @answer], remote: true, :html => {:class => 'answer'} do |a| %>

@@ -12,7 +12,7 @@ PlatypusX::Application.routes.draw do
   resources :users
   resources :sessions, :except => "sessions#destroy"
 
-  resources :votes, :only =>[:new, :create, :show]
+  resources :votes
 
   root :to => 'users#index'
 end
