@@ -1,1 +1,10 @@
 <li><%= @answer.response %></li>
+<%= link_to "Create a Comment", new_answer_comment_path(@answer)%>
+
+<%= form_for [@answer, @comment], remote: true, :html => {:class => 'hidden'} do |a| %>
+  <h4><%= a.label :Comment %></h4>
+  <h4><%= a.text_field :body %></h4><br>
+  <%= a.submit "comment", :class => 'commit' %>
+  <%end%>
+
+

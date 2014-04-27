@@ -4,6 +4,10 @@ PlatypusX::Application.routes.draw do
     resources :answers
   end
 
+  resources :answers do
+    resources :comments
+  end
+
   # get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
