@@ -11,8 +11,8 @@ class CommentsController < ApplicationController
       render partial: 'answers/answers', locals: {answer: @answer,comment: @comment}
     else
       render json: @user.error.full_messages, status: :unprocessable_entity
+    end
   end
-end
 
   def show
     @answer= Answer.find(params[:id])
