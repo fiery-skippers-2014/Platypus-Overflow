@@ -1,3 +1,4 @@
+<ul>
 <li><%= @answer.response %></li>
 
 <a href="/" id="bullshit">comment</a>
@@ -6,6 +7,11 @@
 <%= form_for [@answer, @comment], remote: true, :html => {:class => 'hidden'} do |a| %>
   <h4><%= a.label :Comment %></h4>
   <h4><%= a.text_field :body %></h4><br>
-  <%= a.submit "comment", :class => 'commit' %>
+  <%= a.submit "comment", :class => 'comment' %><br>
   <%end%>
+
+
+</ul>
+
+
 

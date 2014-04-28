@@ -5,17 +5,25 @@ class CommentsController < ApplicationController
   end
 
   def create
-  @comment = Comment.new(body: params[:body], answer_id: params[:answer_id])
+  p params
+  @comment = Comment.new(body: params[:comment][:body], answer_id: params[:answer_id])
     if @comment.save
       @answer = @comment.answer
-      render partial: 'answers/answers', locals: {answer: @answer,comment: @comment}
+      render json: @comment.to_json
+      # render partial: 'answers/answers', locals: {answer: @answer,comment: @comment}
     else
-      render json: @user.error.full_messages, status: :unprocessable_entity
+      render partial: 'answers/answers', locals: {answer: @answer,comment: @comment}
     end
+    
   end
 
   def show
     @answer= Answer.find(params[:id])
     @comment = Comment.find(params[:id])
+    @comments= @answer.comments
+    p "$$$$$"
+    p @comments
+    p "$$$$$"
+    render json: @comment.to_json
  end
 end
