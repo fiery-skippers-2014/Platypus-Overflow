@@ -14,9 +14,10 @@ class CommentsController < ApplicationController
     else
       render partial: 'answers/answers', locals: {answer: @answer,comment: @comment}
     end
-    
+
   end
 
+  # I'm confused by this.
   def show
     @answer= Answer.find(params[:id])
     @comment = Comment.find(params[:id])
