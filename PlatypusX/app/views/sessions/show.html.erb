@@ -1,9 +1,0 @@
-<h1>This will be where the questions  and user information are displayed when logged in</h1>
-
-<h2>Create a new Question</h2>
-<ul>
-  <% @questions.each do |question| %>
-    <li><%= link_to question.title, question_path(question) %></li>
-    <%end%>
-</ul>
-<%= link_to "Create a Question", new_question_path %>

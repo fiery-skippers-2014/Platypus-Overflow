@@ -10,6 +10,7 @@ describe AnswersController do
   end
 end
 
+# commented code is EVIL!!
 
  # context "#create" do
  #   let(:user) {User.new(name: "marklar", email:"marklar", password:"marklar")}
@@ -31,4 +32,3 @@ end
  #    end
 
  #  end
-

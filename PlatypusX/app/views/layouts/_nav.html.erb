@@ -1,0 +1,9 @@
+<div id="user_nav">
+  <% if current_user %>
+    Logged in as <%= current_user.email %>.
+    <%= button_to "Log out", logout_path, :method => :get, :class => "btn btn-primary" %>
+  <% else %>
+    <%= button_to "Sign up", new_user_path, :method => :get, :class => "btn btn-primary" %>
+    <%= button_to "Log in", login_path, :method => :get, :class => "btn btn-primary" %>
+  <% end %>
+</div>

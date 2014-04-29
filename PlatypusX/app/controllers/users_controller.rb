@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-  # before_filter :authorize, only: [:edit, :update]
-  def index
-
-  end
+  before_filter :authorize, only: [:show]
 
   def new
     @user = User.new
@@ -11,20 +8,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      session[:user_id] = @user.id
+      login @user
       redirect_to session_path(@user)
     else
       render :new
     end
   end
-
-  def show
-    if current_user
-      render :show
-    else
-      render :new
-    end
-  end
-
-
 end

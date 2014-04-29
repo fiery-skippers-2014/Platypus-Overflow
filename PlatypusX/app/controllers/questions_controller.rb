@@ -1,23 +1,25 @@
 class QuestionsController < ApplicationController
- def index
- 	@questions = Question.all
- end
+  before_filter :authorize
 
- def new
- 	@question = Question.new
- end
+  def index
+  	@questions = Question.all
+  end
 
- def show
- 	@question = Question.find(params[:id])
+  def new
+  	@question = Question.new
+  end
+
+  def show
+  	@question = Question.find(params[:id])
   @answer = Answer.new
- end
+  end
 
- def create
- 	@question= Question.new params[:question]
- 		if @question.save!
- 			redirect_to questions_path
- 		else
- 			render :new
- 		end
- end
+  def create
+  	@question= Question.new params[:question]
+  		if @question.save!
+  			redirect_to questions_path
+  		else
+  			render :new
+  		end
+  end
 end

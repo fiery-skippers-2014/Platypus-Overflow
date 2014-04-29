@@ -12,5 +12,5 @@ PlatypusX::Application.routes.draw do
   resources :users
   resources :sessions, :except => "sessions#destroy"
 
-  root :to => 'users#index'
+  root :to => 'questions#index'
 end
